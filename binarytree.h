@@ -23,7 +23,6 @@ class binaryTreeType
 {
 public:
 
-    void search() const;
 
     const binaryTreeType<elemType>& operator=(const binaryTreeType<elemType>&); 
       //Overload the assignment operator.
@@ -88,9 +87,7 @@ protected:
 
 private:
 
-
     void search(binaryTreeType<elemType>* p , elemType key);
-   
 
     void copyTree(nodeType<elemType>* &copiedTreeRoot,nodeType<elemType>* otherTreeRoot);
       //Makes a copy of the binary tree to which 
@@ -395,21 +392,4 @@ void binaryTreeType<elemType>::add_decision(const elemType& parent_decision, str
 }
 /// input code
 
-template <class elemType>
-void binaryTreeType<elemType>::search() const
-{
-    string key;
-    bool found = false;
-    cout << "Enter the question to search: ";
-    cin.ignore();
-    getline(cin, key);
-    search(root, key, found);
-    if (found) {
-        cout << key << " was found in the tree." << endl;
-    } else {
-        cout << key << " was not found in the tree." << endl;
-    }
-}
-
-}
 #endif
